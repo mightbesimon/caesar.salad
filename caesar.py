@@ -40,16 +40,13 @@ def guessSalad(cipherText, guesses = 5):
 	# makes texts from all 26 shifts #
 	texts = [''.join(chr(((ord(ltr)-97 + shift)%26 + 97)*ltr.isalpha() + ord(ltr)*(not ltr.isalpha())) for ltr in cipherText) for shift in range(26)]
 
-
 	# calculates goodness of all text shifts #
 	#	- goodness is just the sum of letter frequency
 	goodness = [round(sum(letterFreq[(ord(ltr) - 97)*ltr.isalpha()] for ltr in texts[idx]), 4) for idx in range(26)]
 
 
-	if guesses == 1:
-		return texts[goodness.index(max(goodness))]
-
 	# find most likely plain texts #
+	if guesses == 1: return texts[goodness.index(max(goodness))]
 	likelyTexts = [text for count, text in zip(goodness, texts).sort(reverse = True)]
 	return likelyTexts[:guesses]
 
@@ -69,24 +66,19 @@ def lookupSalad(cipherText, guesses = 1):
 
 	# get wordlist #
 	with open('wordlist.txt', 'r') as wordlistFile: wordlist = wordlistFile.read().split('\n')
-
 	cipherText = cipherText.lower()		#change to lower case for easier comparison
 
 
 	# makes texts from all 26 shifts #
 	texts = list(''.join(chr(((ord(ltr)-97 + shift)%26 + 97)*ltr.isalpha() + ord(ltr)*(not ltr.isalpha())) for ltr in cipherText) for shift in range(26))
-	
 
 	# num of actual words in each shift #
 	wordCount = list(sum(word in wordlist for word in line) for line in list(text.split(' ') for text in texts))
-
-	if not any(wordCount):
-		return guessSalad(cipherText, guesses)
-
-	if guesses == 1:
-		return texts[wordCount.index(max(wordCount))]
+	if not any(wordCount): return guessSalad(cipherText, guesses)	# found no words
 
 
+	# find most likely plain texts #
+	if guesses == 1: return texts[wordCount.index(max(wordCount))]
 	plainTexts = [text for count, text in zip(wordCount, texts).sort(reverse = True)]
 	return plainTexts[:guesses]
 
