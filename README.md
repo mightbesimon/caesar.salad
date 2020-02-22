@@ -9,7 +9,7 @@ but it's pretty bad with pronouns and i'd imagine in real world application it'd
 
 ### Prerequisites
 
-all you need is **'caesar.py'**\
+all you need is **'caesar.py'** and **'wordlist.txt'**\
 you may also want *'examples.py'* to see how to use the salads but it's pretty straight forward\
 you can also get *'test.py'* to see a bunch of salad quotes and my 52/52,\
 100% accuracy and average 0.040s per cipher text
