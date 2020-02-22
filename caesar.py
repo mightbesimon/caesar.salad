@@ -68,9 +68,7 @@ def lookupSalad(cipherText, guesses = 1):
 	# by mightbesimon(simon) :)'''
 
 	# get wordlist #
-	wordlistFile = open('wordlist.txt', 'r')
-	wordlist = wordlistFile.read().split('\n')
-	wordlistFile.close()
+	with open('wordlist.txt', 'r') as wordlistFile: wordlist = wordlistFile.read().split('\n')
 
 	cipherText = cipherText.lower()		#change to lower case for easier comparison
 
