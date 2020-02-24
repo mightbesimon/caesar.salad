@@ -8,10 +8,8 @@ def salad(ciphertext, guesses = 1):
 	#	                but is slow and not great with pronouns
 	# by mightbesimon(simon) :)'''
 
-	if (len(ciphertext) < 40):
-		return lookupSalad(ciphertext, guesses)
 
-	return guessSalad(ciphertext, guesses)
+	return lookupSalad(ciphertext, guesses) if len(ciphertext) < 40 else guessSalad(ciphertext, guesses)
 
 
 
@@ -47,7 +45,7 @@ def guessSalad(cipherText, guesses = 5):
 
 	# find most likely plain texts #
 	if guesses == 1: return texts[goodness.index(max(goodness))]
-	likelyTexts = [text for count, text in zip(goodness, texts).sort(reverse = True)]
+	likelyTexts = [text for count, text in sorted(zip(goodness, texts), reverse = True)]
 	return likelyTexts[:guesses]
 
 
@@ -79,6 +77,6 @@ def lookupSalad(cipherText, guesses = 1):
 
 	# find most likely plain texts #
 	if guesses == 1: return texts[wordCount.index(max(wordCount))]
-	plainTexts = [text for count, text in zip(wordCount, texts).sort(reverse = True)]
+	plainTexts = [text for count, text in sorted(zip(wordCount, texts), reverse = True)]
 	return plainTexts[:guesses]
 
