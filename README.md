@@ -1,19 +1,19 @@
-![caesar.salad](https://github.com/mightbesimon/caesar.salad/blob/master/thumbnail.jpg)
+![caesar.salad](thumbnail.jpg)
 
 # caesar.salad
 
-caesar cipher speed crack, unknown shift condition\
-this cipher's a pretty useless encryption and rarely used\
+caesar cipher speed crack, unknown shift condition  
+this cipher's a pretty useless encryption and rarely used  
 but if you do end up misusing this it's *not my problem*
 
-in my tests of 52 quotes, salad decipherer got 100% accuracy and average 0.040s per cipher text\
+in my tests of 52 quotes, salad decipherer got 100% accuracy and average 0.040s per cipher text  
 but it's pretty bad with pronouns and i'd imagine in real world application it'd be around 90%
 
 ### Prerequisites
 
-a dictionary file,\
-there's one provided: **'wordlist.txt'**\
-works fine with base python, don't need any libraries\
+a dictionary file,  
+there's one provided: `wordlist.txt`  
+works fine with base python, don't need any libraries  
 see 'examples.py' to get you started
 
 ### Use
@@ -24,8 +24,9 @@ import caesar
 print(caesar.salad(ciphertext))
 ```
 
-that's it! the salad decipherer has got pretty good accuracy, in all my test cases it has always been the first guess\
-but **if** for some reason the first guess is not the plain text you are looking for\
+that's it! the salad decipherer has got pretty good accuracy, in all my test cases it has always been the first guess
+
+but **if** for some reason the first guess is not the plain text you are looking for  
 you can add additional guesses like so:
 ```python
 caesar.salad(ciphertext, numGuesses)
@@ -50,3 +51,4 @@ please give me credit, this took me an afternoon
 ## Acknowledgments
 
 - rip Caesar (44 BCE)
+
