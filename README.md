@@ -1,10 +1,12 @@
+![caesar.salad](https://github.com/mightbesimon/caesar.salad/blob/master/thumbnail.jpg)
+
 # caesar.salad
 
-> caesar cipher speed crack, unknown shift condition\
+caesar cipher speed crack, unknown shift condition\
 this cipher's a pretty useless encryption and rarely used\
 but if you do end up misusing this it's *not my problem*
 
-> in my tests of 52 quotes, salad decipherer got 100% accuracy and average 0.040s per cipher text\
+in my tests of 52 quotes, salad decipherer got 100% accuracy and average 0.040s per cipher text\
 but it's pretty bad with pronouns and i'd imagine in real world application it'd be around 90%
 
 ### Prerequisites
