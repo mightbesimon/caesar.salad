@@ -13,7 +13,7 @@ def salad(ciphertext, guesses = 1):
 
 
 
-def guessSalad(cipherText, guesses = 5):
+def guessSalad(cipherText, guesses=5):
 	''' - guessSalad(cipherText, guesses = 5)
 	[output]: most likely plain texts
 	# guesses the most likely plaintexts
@@ -50,7 +50,7 @@ def guessSalad(cipherText, guesses = 5):
 
 
 
-def lookupSalad(cipherText, guesses = 1):
+def lookupSalad(cipherText, guesses=1):
 	''' - lookupSalad(cipherText, guesses = 1)
 	[output]: most likely plain text
 	# guesses the most likely plaintexts
@@ -77,6 +77,6 @@ def lookupSalad(cipherText, guesses = 1):
 
 	# find most likely plain texts #
 	if guesses == 1: return texts[wordCount.index(max(wordCount))]
-	plainTexts = [text for count, text in sorted(zip(wordCount, texts), reverse = True)]
+	plainTexts = [text for count, text in sorted(zip(wordCount, texts), reverse=True)]
 	return plainTexts[:guesses]
 
