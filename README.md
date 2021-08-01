@@ -1,6 +1,8 @@
-![caesar.salad](thumbnail.jpg)
+![caesar.salad](salad.jpg)
 
 # caesar.salad
+
+> savoury
 
 caesar cipher speed crack, unknown shift condition  
 this cipher's a pretty useless encryption and rarely used  
@@ -12,7 +14,9 @@ but it's pretty bad with pronouns and i'd imagine in real world application it'd
 ### Prerequisites
 
 a dictionary file,  
-there's one provided: `wordlist.txt`  
+
+> there's one provided: `wordlist.txt` 
+
 works fine with base python, don't need any libraries  
 see 'examples.py' to get you started
 
@@ -51,4 +55,3 @@ please give me credit, this took me an afternoon
 ## Acknowledgments
 
 - rip Caesar (44 BCE)
-
